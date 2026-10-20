@@ -1,7 +1,7 @@
 [project]
-name = "jdaviz_profiler"
-description = "Profile jdaviz Jupyter notebook"
-urls = {Homepage = "https://github.com/bafio/jdaviz_profiler"}
+name = "speedometer"
+description = "Profile Jupyter notebooks"
+urls = {Homepage = "https://github.com/spacetelescope/speedometer"}
 authors = [
     {name = "Fabio Trabucchi", email = "fabio.trabucchi@gmail.com"},
 ]

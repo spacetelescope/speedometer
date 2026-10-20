@@ -15,7 +15,7 @@ from nbformat import NotebookNode
 
 KILOBYTE: int = 1024
 MEGABYTE: int = 1024 * KILOBYTE
-LOGGER_NAME = "jdaviz_profiler"
+LOGGER_NAME = "speedometer"
 
 
 @dataclass

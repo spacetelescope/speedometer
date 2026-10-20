@@ -1,16 +1,16 @@
-# Jdaviz Profiler
+# `speedometer`
 
-Jdaviz Profiler is a Python toolkit designed to automate the generation and profiling of Jupyter notebooks for the [jdaviz](https://github.com/spacetelescope/jdaviz) visualization suite.
-It enables users to systematically test and benchmark jdaviz’s Imviz plugin under a variety of parameter combinations, such as image size, number of images, viewport size, and more.
+`speedometer` is a Python toolkit designed to automate the generation and profiling of Jupyter notebooks.
+It enables users to systematically test and benchmark packages under a variety of parameter combinations.
 
-**Note**: This profiler is designed to work with JupyterLab environments that have the necessary jdaviz extensions and configurations, such as those provided by the [AWS Science Platform Images](https://github.com/spacetelescope/science-platform-images). Local Jupyter setups may not have the required jdaviz extensions needed for the profiler to function correctly.
+**Note**: This is designed to work with JupyterLab environments that have the necessary extensions and configurations, such as those provided by the [AWS Science Platform Images](https://github.com/spacetelescope/science-platform-images). Local Jupyter setups may not have the required extensions needed for packages to function correctly.
 
 ## Features
 
 ### Notebook Generation:
 
 Automatically creates Jupyter notebooks from a template (`template.ipynb`) and a parameter configuration file (`params.json`).
-Link to the [Jdaviz Profiler Usecases repository](https://github.com/spacetelescope/jdaviz_profiler_usecases), which contains example usecases with their respective `template.ipynb` and `params.json` files.
+Link to the [`speedometer_usecases` repository](https://github.com/spacetelescope/speedometer_usecases), which contains example usecases with their respective `template.ipynb` and `params.json` files.
 
 All possible combinations of parameters are generated, allowing for comprehensive profiling.
 
@@ -24,14 +24,14 @@ Each parameter in the params.json file must have a corresponding placeholder in 
 
 The generated parameterized notebooks will be saved in the `<usecase path>/notebooks` directory.
 
-An example of how to structure a new `<usecase>` (along with `template.ipynb` and `params.json` files) is provided in [Jdaviz Profiler Usecases repository](https://github.com/spacetelescope/jdaviz_profiler_usecases/tree/main/imviz_images).
+An example of how to structure a new `<usecase>` (along with `template.ipynb` and `params.json` files) is provided in [`speedometer_usecases` repository](https://github.com/spacetelescope/speedometer_usecases/tree/main/imviz_images).
 
 ### Notebook Profiling:
 
 Uses Selenium to launch and interact with JupyterLab, executing each notebook cell and recording performance metrics.
 Optionally, if a cell is tagged with:
 - `skip_profiling`, the performance metrics during the execution of that cell will not be collected.
-- `wait_for_viz`, the profiler will wait after cell execution for Imviz to be stable (i.e. all images loaded and rendered) before proceeding to the next cell. This is useful for cells that load images into Imviz, ensuring accurate profiling of rendering times.
+- `wait_for_viz`, the profiler will wait after cell execution for `jdaviz` to be stable (i.e. all images loaded and rendered) before proceeding to the next cell. This is useful for cells that load images into `jdaviz`, ensuring accurate profiling of rendering times.
 
 ### Session Management:
 
