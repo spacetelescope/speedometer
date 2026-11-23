@@ -277,6 +277,7 @@ class JupyterLabHelper:
             response: requests.Response = requests.get(
                 f"{self.url}/api/metrics/v1/kernel_usage/get_usage/{kernel_id}",
                 headers=self.headers,
+                timeout=(5, 10)
             )
             response.raise_for_status()
             return response.json().get("content", {})
